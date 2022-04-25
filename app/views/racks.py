@@ -4,6 +4,7 @@ from app.database import db
 from app.schemas.racks import RackSchema
 from flask import request
 
+
 rack_ns = Namespace('racks')
 rack_schema = RackSchema()
 racks_schema = RackSchema(many=True)
@@ -46,3 +47,4 @@ class RackView(Resource):
         db.session.commit()
 
         return None, 201
+
