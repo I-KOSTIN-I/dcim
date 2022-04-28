@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restx import Api
 from app.config import Config
 from app.database import db
-from app.views import customers, racks, rooms
+from app.views import customers, racks, rooms, sql, math
 
 
 def create_app(config_object):
@@ -15,7 +15,6 @@ def create_app(config_object):
 def register_extensions(app):
     db.init_app(app)
     with app.app_context():
-        #from app import views
 
         db.create_all()
 
@@ -29,6 +28,8 @@ def register_extensions(app):
     api.add_namespace(customers.customer_ns)
     api.add_namespace(racks.rack_ns)
     api.add_namespace(rooms.room_ns)
+    api.add_namespace(sql.sql_ns)
+    api.add_namespace(math.math_ns)
 
 
 app = create_app(Config())

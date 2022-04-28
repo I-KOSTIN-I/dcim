@@ -24,7 +24,7 @@ def search_by_status():
     for i in response:
         status_data.append(dict(i))
 
-    return json.dumps(status_data, ensure_ascii=False)
+    return status_data
 
 
 def search_by_customers():
@@ -39,7 +39,7 @@ def search_by_customers():
     for i in response:
         customers_data.append(dict(i))
 
-    return json.dumps(customers_data, ensure_ascii=False)
+    return customers_data
 
 
 def search_by_size():
@@ -50,13 +50,13 @@ def search_by_size():
     LEFT JOIN room ON rack.room_id = room.id
     GROUP BY room.id  
     ''')
-    data_size = []
+    size_data = []
     for i in response:
-        data_size.append(dict(i))
+        size_data.append(dict(i))
 
-    return json.dumps(data_size, ensure_ascii=False)
+    return size_data
 
 
-print(search_by_status())
-print(search_by_size())
-print(search_by_customers())
+#print(search_by_status())
+#print(search_by_size())
+#print(search_by_customers())
