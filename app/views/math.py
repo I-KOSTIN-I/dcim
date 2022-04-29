@@ -1,6 +1,5 @@
 from math_functions import first_function, second_function, third_function, fourth_function
 from flask_restx import Resource, Namespace
-import json
 from app.schemas.math import FirstSchema, SecondSchema, ThirdSchema, FourthSchema
 
 
