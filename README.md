@@ -6,7 +6,7 @@ docker build -t dcimtest .
 
 Для загрузки контейнера
 
-docker load -i dcimtest > dcimtest.tar
+docker load dcimtest > dcimtest.tar
 
 #######################
 
